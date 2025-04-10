@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungSegment AI - Сегментация узелков в легких</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="main-header sticky">
+        <div class="container">
+            <a href="#hero" class="logo">LungSegment<span>AI</span></a>
+            <nav class="main-nav">
+                 <button class="mobile-nav-toggle" aria-label="Открыть навигацию" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="primary-navigation" data-visible="false">
+                    <li><a href="#about">О проекте</a></li>
+                    <li><a href="#technology">Технология</a></li>
+                    <li><a href="#demo">Демонстрация</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-elements"> <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="container hero-content">
+                <h1 class="hero-title animate-fade-in-up">Автоматическая сегментация <span>узелков в легких</span></h1>
+                <p class="hero-subtitle animate-fade-in-up delay-1">Разработка нейросети на базе архитектуры U-Net для точного выделения легочных узелков на КТ-снимках.</p>
+                <div class="hero-buttons animate-fade-in-up delay-2">
+                    <a href="#about" class="btn btn-primary">Подробнее о проекте</a>
+                    <a href="#contact" class="btn btn-secondary">Связаться</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image animate-fade-in-left">
+                        <img src="images/Lungs-rafiki.png" alt="КТ снимок легких">
+                    </div>
+                    <div class="about-text animate-fade-in-right">
+                        <h2 class="section-title">О проекте</h2>
+                        <h3>Задача: Точное выделение узелков</h3>
+                        <p>Обнаружение и точная сегментация (выделение границ) узелков в легких на КТ-снимках — ключевой этап в диагностике и мониторинге заболеваний, включая рак легких. Ручная сегментация требует времени и может варьироваться у разных специалистов.</p>
+                        <h3>Решение: U-Net для сегментации</h3>
+                        <p>Создание и обучение нейронной сети на основе архитектуры U-Net, специально разработанной для задач сегментации биомедицинских изображений. Цель — разработать инструмент, который сможет:</p>
+                        <ul>
+                            <li><i class="fas fa-vector-square"></i> Автоматически и точно определять границы узелков.</li>
+                            <li><i class="fas fa-tachometer-alt"></i> Значительно ускорить процесс анализа КТ-снимков.</li>
+                            <li><i class="fas fa-chart-bar"></i> Предоставлять объективные, воспроизводимые результаты сегментации.</li>
+                            <li><i class="fas fa-user-md"></i> Стать полезным инструментом для радиологов и исследователей.</li>
+                        </ul>
+                        <a href="#technology" class="btn btn-outline">Как это работает?</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technology-section" id="technology">
+            <div class="container">
+                <h2 class="section-title animate-fade-in">Технологический процесс</h2>
+                <p class="section-subtitle animate-fade-in delay-1">Основные этапы разработки и обучения модели U-Net для сегментации.</p>
+                <div class="tech-steps-grid">
+                    <div class="tech-step animate-fade-in-up delay-1">
+                        <div class="step-icon"><i class="fas fa-database"></i></div>
+                        <h3>1. Данные</h3>
+                        <p>Использование анонимизированных КТ-снимков с экспертной разметкой (масками) узелковых образований.</p>
+                    </div>
+                    <div class="tech-step animate-fade-in-up delay-2">
+                        <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>2. Предобработка</h3>
+                        <p>Нормализация интенсивности пикселей, аугментация данных для повышения устойчивости модели.</p>
+                    </div>
+                    <div class="tech-step animate-fade-in-up delay-3">
+                        <div class="step-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>3. Архитектура U-Net</h3>
+                        <p>Применение архитектуры U-Net, состоящей из сжимающего (энкодер) и расширяющего (декодер) путей.</p>
+                    </div>
+                     <div class="tech-step animate-fade-in-up delay-4">
+                        <div class="step-icon"><i class="fas fa-brain"></i></div>
+                        <h3>4. Обучение</h3>
+                        <p>Тренировка сети с использованием функций потерь, оптимизированных для сегментации (например, Dice Loss).</p>
+                    </div>
+                     <div class="tech-step animate-fade-in-up delay-5">
+                        <div class="step-icon"><i class="fas fa-tasks"></i></div>
+                        <h3>5. Оценка</h3>
+                        <p>Валидация модели на отложенной выборке с использованием метрик качества сегментации (Dice score, IoU).</p>
+                    </div>
+                     <div class="tech-step animate-fade-in-up delay-6">
+                        <div class="step-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>6. Оптимизация</h3>
+                        <p>Подбор гиперпараметров и возможное улучшение архитектуры для достижения наилучших результатов.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section class="demo-section" id="demo">
+            <div class="container">
+                <h2 class="section-title animate-fade-in">Пример работы модели</h2>
+                <p class="section-subtitle animate-fade-in delay-1">Визуализация результата сегментации узелка на КТ-снимке.</p>
+                <div class="demo-content animate-fade-in-up delay-2">
+                    <div class="demo-image">
+                        <img src="images/1.png" alt="Исходный КТ срез">
+                        <p class="caption">Исходный срез КТ</p>
+                    </div>
+                    <div class="demo-arrow">
+                        <i class="fas fa-long-arrow-alt-right"></i>
+                    </div>
+                    <div class="demo-image">
+                        <img src="images/2.png" alt="Результат сегментации">
+                         <p class="caption">Маска сегментации, предсказанная U-Net</p>
+                    </div>
+                </div>
+                 <p class="demo-note animate-fade-in delay-3">Примечание: Представленные изображения являются примерами и могут не отражать реальную точность текущей версии модели.</p>
+            </div>
+        </section>
+
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title animate-fade-in">Связаться</h2>
+                <p class="section-subtitle animate-fade-in delay-1">Если у Вас есть вопросы, предложения или интерес к проекту.</p>
+                <div class="contact-content">
+                    <div class="contact-form animate-fade-in-left delay-2">
+                         <h3>Отправить сообщение</h3>
+                        <form action="#" method="POST"> <div class="form-group">
+                                <input type="text" id="name" name="name" required placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required placeholder="Ваш Email">
+                            </div>
+                             <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Тема сообщения">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="6" required placeholder="Ваше сообщение"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                    <div class="contact-info animate-fade-in-right delay-2">
+                         <h3>Контактная информация</h3>
+                         
+                         <div class="info-item">
+                             <i class="fas fa-envelope"></i>
+                             <div>
+                                 <h4>Email</h4>
+                                 <a href="mailto:your.email@example.com">your.email@example.com</a> </div>
+                         </div>
+                          <div class="info-item">
+                             <i class="fab fa-github"></i>
+                              <div>
+                                 <h4>GitHub</h4>
+                                 <a href="#" target="_blank" rel="noopener noreferrer">github.com/your_username</a> </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                 <a href="#hero" class="logo">LungSegment<span>AI</span></a>
+                 <p>Проект по автоматической сегментации легочных узелков на КТ-снимках с использованием U-Net.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> LungSegmentAI. Все права защищены.</p> </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
